@@ -51,13 +51,13 @@ async function processEvent(event, { global, storage }) {
                 time_since_last_seen: timeSinceLastSeen,
                 timestamp: timestamp, // backdate to when session _actually_ started
                 trigger_event: event.event,
-                `$timezone`: TIMEZONE
+                timezone: TIMEZONE
             }
         )
     }
-    event.properties['is_first_event_in_session'] = isFirstEventInSession
+    event.properties['is_first_event_in_session'] = isFirstEventInSession;
 
-    return event
+    return event;
 }
 
 module.exports = {
